@@ -1,6 +1,6 @@
-## Welcome to 医往无际
+## Welcome to Youfu's Pages
 
-You can use the [导航页](https://stillfan.gitee.io/web/) to visit the website.
+You can use the [简单可依赖的个人导航页](https://stillfan.gitee.io/web/) to visit the website.
 
 ### WeiBo
 
