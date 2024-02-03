@@ -1,0 +1,22 @@
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD>
+<TITLE>便民查询工具</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<BODY>
+<table  border=0 cellSpacing=0 cellPadding=0 width="100%" height="100%">
+  <tbody>
+    <tr>
+    <td align=center height=20px><a href="bms.html" class="siteTitle">返回便民查询首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="index.html" class="siteTitle">返回导航首页</a></td>
+    </tr>
+    <tr>
+     <td><iframe id="api_iframe_bmcx" name="api_iframe_bmcx" src="" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+      <script type="text/javascript">
+//接口生成：https://www.bmcx.com/api/
+document.getElementById("api_iframe_bmcx").src = "https://www.bmcx.com/apiiframe/?api_from=bmcx&api_url=https://www.bmcx.com/&api_width=98%&api_backgroundcolor=FFFFFF&api_agent="+location.href.match(/^.*?\:\/\/[^\/]+\//i)+"web/bmcx_api_agent.html";
+</script>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</BODY>
+</HTML>
