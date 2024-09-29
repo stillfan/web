@@ -72,7 +72,7 @@ LI {
             width: 100px;height: 40px;border: none;border-radius: 5px;background: #01439a;vertical-align: middle;outline: none;color: white;font-size: 20px;
  }
 #container {
-	LINE-HEIGHT: 200%; MARGIN: 15px auto 0px; WIDTH: 904px; FONT-SIZE: 14px
+	LINE-HEIGHT: 200%; MARGIN: 15px auto 0px; WIDTH: 910px; FONT-SIZE: 14px
 }
 #container A:link {
 	COLOR: #004398; TEXT-DECORATION: none
@@ -88,7 +88,7 @@ LI {
 	PADDING-BOTTOM: 2px; MARGIN: 0px 8px 0px 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: #eff5fb; FLOAT: left; PADDING-TOP: 2px
 }
 #leftwraper {
-	BORDER-BOTTOM: #ace 1px solid; BORDER-LEFT: #ace 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #fafbfd; PADDING-LEFT: 8px; WIDTH: 168px; PADDING-RIGHT: 14px; BORDER-TOP: #ace 1px solid; BORDER-RIGHT: #ace 1px solid; PADDING-TOP: 0px
+	BORDER-BOTTOM: #ace 1px solid; BORDER-LEFT: #ace 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #fafbfd; PADDING-LEFT: 8px; WIDTH:188px; PADDING-RIGHT: 14px; BORDER-TOP: #ace 1px solid; BORDER-RIGHT: #ace 1px solid; PADDING-TOP: 0px
 }
 .leftContent {
 	BORDER-BOTTOM: #abceee 1px dotted; PADDING-BOTTOM: 14px; PADDING-LEFT: 6px; PADDING-RIGHT: 0px; PADDING-TOP: 12px
@@ -97,13 +97,13 @@ LI {
 	PADDING-BOTTOM: 14px; PADDING-LEFT: 6px; PADDING-RIGHT: 0px; PADDING-TOP: 12px
 }
 #rightSide {
-	WIDTH: 700px; FLOAT: left
+	WIDTH: 674px; FLOAT: left
 }
 #search {
-	BORDER-BOTTOM: #d9e9f8 1px solid; BORDER-LEFT: #d9e9f8 1px solid; WIDTH: 698px; BACKGROUND: #eff5fb; BORDER-TOP: #d9e9f8 1px solid; BORDER-RIGHT: #d9e9f8 1px solid
+	BORDER-BOTTOM: #d9e9f8 1px solid; BORDER-LEFT: #d9e9f8 1px solid; WIDTH: 685px; BACKGROUND: #eff5fb; BORDER-TOP: #d9e9f8 1px solid; BORDER-RIGHT: #d9e9f8 1px solid
 }
 #searchWraper {
-	MARGIN: 0px 2px 2px; WIDTH: 694px; BACKGROUND: #fff
+	MARGIN: 0px 2px 2px; WIDTH: 681px; BACKGROUND: #fff
 }
 #search TABLE {
 	MARGIN: 0px 3px 3px
@@ -118,10 +118,10 @@ LI {
 	DISPLAY: block; FLOAT: right; MARGIN-RIGHT: 8px
 }
 #siteAll {
-	BORDER-BOTTOM: #d9e9f8 1px solid; BORDER-LEFT: #d9e9f8 1px solid; MARGIN: 12px 0px 0px; WIDTH: 698px; BACKGROUND: #eff5fb; BORDER-TOP: #d9e9f8 1px solid; BORDER-RIGHT: #d9e9f8 1px solid
+	BORDER-BOTTOM: #d9e9f8 1px solid; BORDER-LEFT: #d9e9f8 1px solid; MARGIN: 12px 0px 0px; WIDTH: 685px; BACKGROUND: #eff5fb; BORDER-TOP: #d9e9f8 1px solid; BORDER-RIGHT: #d9e9f8 1px solid
 }
 #siteAllWrapper {
-	PADDING-BOTTOM: 3px; MARGIN: 0px 2px 2px; PADDING-LEFT: 0px; WIDTH: 694px; PADDING-RIGHT: 0px; BACKGROUND: #fff; PADDING-TOP: 0px
+	PADDING-BOTTOM: 3px; MARGIN: 0px 2px 2px; PADDING-LEFT: 0px; WIDTH: 683px; PADDING-RIGHT: 0px; BACKGROUND: #fff; PADDING-TOP: 0px
 }
 #siteAll TABLE {
 	MARGIN: 0px auto
@@ -186,7 +186,7 @@ LI {
 
 ul,li{ display:block;}
 
-.tag_link{width:698px; margin:1px 1px 1px 1px;overflow:hidden;height:50px;background-color:#f0f5fb; }
+.tag_link{width:685px; margin:1px 1px 1px 1px;overflow:hidden;height:50px;background-color:#f0f5fb; }
 
 .tag_link .tabmenu { height: 30px;background-color:#ffffff;background-repeat: repeat-x;background-position: 0px 0px;padding:0px;border-left:1px solid #eeeeee;border-right:1px solid #eeeeee;}
 
