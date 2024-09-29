@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新闻聚合</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="./style.css">
+<style>
+.post-detail {background-color: #fff0;padding: 0px;}
+
+.footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+  background:#fff;
+}  
+label {margin-right: 10px;}
+
+#checkbox-container > div:first-child {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+#checkbox-container > div:first-child > div:first-child {
+grid-column: 1 / -1;}
+
+
+.main {
+    min-height: 80px;
+}
+
+#hotlist-container{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin: 20px auto 100px;
+}
+
+#hotlist{
+width: 75%;
+margin: 0px auto;
+}
+@media (max-width: 992px) { 
+#hotlist {
+    width: calc(100% - 40px);
+  padding: 0 20px;
+}
+ }
+.subtitle {
+    white-space: nowrap;
+  font-size: .875rem;
+}
+.hot-rank1{background: #f1404b!important;}
+.hot-rank2{background: #c56831!important;}
+.hot-rank3{background: #b89e2c!important;}
+.hot-rank1,
+.hot-rank2,
+.hot-rank3{
+    color: #fff;}
+.hot-rank1,
+.hot-rank2,
+.hot-rank3,
+.hot-rank4 {
+    width: 18px;
+    border-radius: 4px;
+    background: rgba(124, 124, 124, .3);
+    display: inline-block; 
+    text-align: center; 
+    vertical-align: -0.15em;
+}
+.title a {
+    margin-left: 5px;
+  font-size: .875rem;
+  color: #282a2d;
+      text-decoration: none;
+}
+
+.title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2; /* 显示的行数 */
+    text-overflow: ellipsis;
+}
+.hot-list{
+display: flex; 
+justify-content: 
+space-between; 
+margin-right: auto;
+padding-bottom: 7px;
+}
+
+.hot-list-wrapper{
+    max-height: 300px;
+    overflow: auto;
+  padding-right: 5px;
+  height: calc(100% - 20px);
+}
+
+.hot-list-wrapper::-webkit-scrollbar {
+    width: 5px; /* 滚动条宽度 */
+    height: 5px; /* 滚动条高度 */
+}
+
+.hot-list-wrapper::-webkit-scrollbar-thumb {
+    background-color: #88888850; /* 滚动条拖动部分颜色 */
+    border-radius: 4px; /* 滚动条拖动部分圆角 */
+}
+
+.hot-list-wrapper::-webkit-scrollbar-track {
+    background-color: #f1f1f100; /* 滚动条背景颜色 */
+}
+
+.hot-list-wrapper::-webkit-scrollbar-button {
+    display: none; /* 隐藏滚动条按钮（箭头） */
+}
+
+.hot-header{
+    margin: 0 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category{
+  padding: 10px;
+    border-radius: 8px;
+  min-height: auto;
+    background: #fff;
+  box-shadow: 2px 8px 10px 0px rgba(158, 158, 158, .2);
+  }
+
+.hot-header img {
+    max-width: 100%; /* 图片宽度最大为容器宽度 */
+    max-height: 100%; /* 图片高度最大为容器高度 */
+    display: block; /* 让图片成为块级元素，以适应容器尺寸 */
+}
+.hot-header span:first-child {
+    display: flex;
+    align-items: center;
+  }
+
+.hot-header div:first-child {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-right: 10px;
+
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+/*热点代码结束*/
+
+/*黑暗模式*/
+.darkModel .category{
+ background-color: rgba(240, 246, 252, 0.149);
+}
+.darkModel .title a {color: #8e969f;}
+</style>
+</head>
+
+<body>
+<script>
+
+var html = "";
+html += '<div id="hotlist"></div>';
+var body = document.getElementsByTagName("body")[0];
+body.innerHTML += html;
+
+    // 将API和描述放到fetch代码中
+    fetch(`https://api.vvhan.com/api/hotlist/all`)
+    .then(response => response.json())
+    .then(data => {
+        const hotpanel = {
+            // 删除原来的categories相关代码
+        };
+        
+        // 构建热搜列表HTML字符串
+        let html = ``;
+        // 复选框区域
+        html += `<div id="checkbox-container">`;
+
+        const categories = data.data;
+        let excludedNames = ["", "", "", "", "", "", "", "", "", "", "", "", ""]
+        html += `<div>
+          <div><input type="checkbox" id="select-all" name="select-all" value="select-all">
+                    <label for="select-all">全选</label></div>`;
+        categories.forEach(category => {
+            const checked = excludedNames.includes(category.name) ? '' : 'checked';
+            html += `
+                        <div><input type="checkbox" id="${category.name}" name="${category.name}" value="${category.name}" ${checked}>
+                        <label for="${category.name}">${category.name}</label></div>
+                     `;
+        });
+        html += `</div>`;
+        html += `</div>`;
+
+        html += '<div id="hotlist-container" class="grid-container">';
+
+        function updateHotList() {
+            let hotlistHtml = '';
+            categories.forEach(category => {
+                if (category.data.length > 0 && !excludedNames.includes(category.name)) {
+                    const firstUrl = category.data[0].url;
+                    const domain = firstUrl.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/img);
+                    const domainName = domain ? domain[0].replace(/^(?:https?:\/\/)?(?:www\.)?/i, '') : '';
+                    // Construct category header
+                    hotlistHtml += `<div class="category">
+                                    <h5 class="hot-header">
+                                        <span><div><img src="https://api.iowen.cn/favicon/${domainName}/.png" ></div>${category.name}</span>
+                                        <span>${category.subtitle}</span>
+                                    </h5>`;
+                    // Construct hot list
+                    hotlistHtml += `<div class="hot-list-wrapper">`;
+                    category.data.forEach(item => {
+                        const rankClass = item.index <= 3 ? `hot-rank${item.index}` : 'hot-rank4';
+                        const hotDigits = item.hot.replace(/[^\d]/g, '');
+                        hotlistHtml += `<div class="hot-list">
+                                            <div class="title">
+                                                <span class="${rankClass}">${item.index}</span>
+                                                <a href="${item.url}" target="_blank">${item.title}</a>
+                                            </div>
+                                            <div class="subtitle">${item.hot}</div>
+                                        </div>`;
+                    });
+                    hotlistHtml += `</div></div>`;
+                }
+            });
+
+            const hotlistContainer = document.getElementById('hotlist-container');
+            hotlistContainer.innerHTML = hotlistHtml;
+        }
+
+        // 将hotlistContainer插入到content的第一位
+        const hotlistDiv = document.getElementById('hotlist');
+        hotlistDiv.insertAdjacentHTML('afterbegin', html);
+
+        // 添加事件监听器处理复选框的变化
+        document.querySelectorAll('#checkbox-container input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (event) => {
+                const categoryName = event.target.value;
+                if (event.target.checked) {
+                    excludedNames = excludedNames.filter(name => name !== categoryName);
+                } else {
+                    if (!excludedNames.includes(categoryName)) {
+                        excludedNames.push(categoryName);
+                    }
+                }
+                updateHotList();
+            });
+        });
+
+        // 添加全选功能
+        document.getElementById('select-all').addEventListener('change', (event) => {
+            const checkboxes = document.querySelectorAll('#checkbox-container input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = event.target.checked;
+                const categoryName = checkbox.value;
+                if (event.target.checked) {
+                    excludedNames = excludedNames.filter(name => name !== categoryName);
+                } else {
+                    if (!excludedNames.includes(categoryName)) {
+                        excludedNames.push(categoryName);
+                    }
+                }
+            });
+            updateHotList();
+        });
+
+        updateHotList();
+    })
+    .catch(error => console.error('Error fetching hot list:', error));
+
+    function toggleVisibility() {
+        var hotlistContainer = document.getElementById("hotlist-container");
+        var hotlistTitle = document.getElementById("hotlist-title");
+        var hotIcon = document.getElementById("hotIcon");
+        var checkboxContainer = document.getElementById("checkbox-container"); 
+        
+        if (hotlistContainer.style.display === "none") {
+          hotlistContainer.style.display = "grid";
+          hotlistTitle.style.display = "";
+          hotIcon.className = "fab fa-hotjar";
+          checkboxContainer.style.display = "block"; 
+        } else {
+          hotlistContainer.style.display = "none";
+          hotlistTitle.style.display = "none"; // 隐藏标题
+          hotIcon.className = "fab fa-hotjar red";
+          checkboxContainer.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
