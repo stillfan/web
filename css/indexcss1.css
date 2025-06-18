@@ -336,7 +336,7 @@
         .tab-menu {
             display: flex;
             border-bottom: 1px solid var(--border-color);
-            background-color: #f8f8f8;
+            background-color: #f0f0f0;
             flex-wrap: wrap;
         }
 
@@ -374,7 +374,7 @@
         }
 
         .tab-btn:hover:not(.active) {
-            background-color: #f0f0f0;
+            background-color: #cccccc;
         }
 
         .tab-content {
