@@ -586,11 +586,11 @@
 
         @media (max-width: 400px) {
             .links-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 2fr;
             }
             
             .category-links {
-                grid-template-columns: 1fr;
+                grid-template-columns: 2fr;
             }
             
             .tab-btn {
