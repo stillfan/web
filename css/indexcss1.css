@@ -64,15 +64,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 15px;
-            position: relative;
+            padding: 10px 0;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            flex: 1;
-            min-width: 0;
         }
 
         .logo img {
@@ -86,22 +83,19 @@
             border: none;
             font-size: 16px;
             cursor: pointer;
+            margin-left: 15px;
             color: var(--text-color);
-            padding: 8px 12px;
-            margin-left: 10px;
         }
 
         .nav-container {
             display: flex;
             align-items: center;
-            transition: all 0.3s ease;
         }
 
         /* 顶部导航横排并突出显示 */
         .main-nav {
             display: flex;
             margin-right: 20px;
-            flex-wrap: wrap;
         }
 
         .main-nav a, .main-nav strong {
@@ -129,12 +123,10 @@
         .search-container {
             position: relative;
             margin-right: 20px;
-            min-width: 200px;
-            flex: 1;
         }
 
         .search-input {
-            width: 100%;
+            width: 300px;
             padding: 10px 15px 10px 40px;
             border: 1px solid var(--border-color);
             border-radius: 30px;
@@ -178,7 +170,6 @@
             height: 20px;
             border: none;
         }
-
         /* 主体内容布局 - 全屏显示 */
         .main-content {
             margin: 20px 0;
@@ -586,11 +577,11 @@
 
         @media (max-width: 400px) {
             .links-grid {
-                grid-template-columns: 2fr;
+                grid-template-columns: 1fr;
             }
             
             .category-links {
-                grid-template-columns: 2fr;
+                grid-template-columns: 1fr;
             }
             
             .tab-btn {
