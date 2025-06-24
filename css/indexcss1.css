@@ -6,6 +6,7 @@
         --text-color: #333;
         --light-text: #666;
         --border-color: #e6e6e6;
+        --link-color: #333333;
         --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         --transition: all 0.3s ease;
     }
@@ -238,6 +239,7 @@
 
     .section-title i {
         margin-right: 10px;
+        color: var(--primary-color);
     }
 
     .links-grid {
@@ -253,6 +255,7 @@
         border-radius: 4px;
         transition: var(--transition);
         font-size: 15px;
+        color:var(--link-color);    /*链接颜色 */
     }
 
     .link-column a i {
@@ -260,12 +263,14 @@
         width: 18px;
         text-align: center;
         flex-shrink: 0;
+        color: var(--primary-color);   /*链接前图标颜色 */
     }
 
     .link-column a:hover {
         background-color: #f0f7ff;
         text-decoration: none;
         transform: translateX(3px);
+        color: var(--primary-color);
     }
 
     /* Category Section - Centered Grid */
@@ -324,6 +329,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        color:var(--link-color);    /*链接颜色 */
     }
 
     .category-links a:hover {
@@ -434,11 +440,13 @@
         border-radius: 6px;
         font-size: 14px;
         transition: var(--transition);
+        color:#000;
     }
 
     .tab-pane a:hover {
         background-color: #e0e0f0;
         text-decoration: none;
+        color:var(--link-color);    /*链接颜色 */
     }
 
     /* Footer */
