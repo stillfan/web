@@ -302,10 +302,8 @@
         margin-bottom: 15px;
         padding-bottom: 10px;
         border-bottom: 1px solid var(--border-color);
-        color: #444;
         display: flex;
         align-items: center;
-        background: linear-gradient(to right, #f8f8f8, white);
     }
 
     .category-title i {
@@ -316,7 +314,7 @@
     .category-links {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 6px;
     }
 
     .category-links a {
