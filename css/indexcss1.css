@@ -245,13 +245,14 @@ header {
 }
 
 .link-column a {
-    display: block;
-    padding: 8px 10px;
-    margin-bottom: 6px;
-    border-radius: 4px;
-    transition: var(--transition);
-    font-size: 15px;
-    background-color: var(--secondary-color);    /*标签背景颜色 */
+            display: block;
+            padding: 8px 10px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 15px;
+            border: 1px solid #dbeafe;
+
 }
 
 .link-column a i {
