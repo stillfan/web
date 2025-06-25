@@ -25,29 +25,30 @@ var _hmt = _hmt || [];
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i> 菜单</button>
             <div class="nav-container" id="mainNav">
-    <nav class="main-nav">
-        <a href="https://chat.deepseek.com/sign_in" target="_blank">Deepseek</a>
-        <a href="news.html" target="_blank"><strong>新闻</strong></a>
-        <a href="https://cn.bing.com/translator" target="_blank">翻译</a>
-        <a href="http://ditu.baidu.com" target="_blank">地图</a>
-        <a href="https://txc.qq.com/products/670535" target="_blank">留言</a>
-        <a href="https://blog.youfu.fan/post/about" target="_blank">关于</a>
-    </nav>
-<div class="search-container">
-    <form action="https://www.baidu.com/s" method="get" target="_blank">
-        <input type="text" name="word" class="search-input" placeholder="2025年，所愿皆如愿！">
-        <button type="submit" class="search-btn">搜索</button>
-    </form>
-</div>
-    <div class="weather-container">
-        <iframe src="https://i.tianqi.com/?c=code&a=getcode&id=73&icon=1" frameborder="0" scrolling="no"></iframe>
-    </div>
-</div>
+                <nav class="main-nav">
+                    <a href="https://chat.deepseek.com/sign_in" target="_blank">Deepseek</a>
+                    <a href="news.html" target="_blank"><strong>新闻</strong></a>
+                    <a href="https://cn.bing.com/translator" target="_blank">翻译</a>
+                    <a href="http://ditu.baidu.com" target="_blank">地图</a>
+                    <a href="https://txc.qq.com/products/670535" target="_blank">留言</a>
+                    <a href="https://blog.youfu.fan/post/about" target="_blank">关于</a>
+                </nav>
+                <div class="search-container">
+                    <form action="https://www.baidu.com/s" method="get" target="_blank">
+                        <input type="text" name="word" class="search-input" placeholder="2025年，所愿皆如愿！">
+                        <button type="submit" class="search-btn">搜索</button>
+                    </form>
+                </div>
+                <div class="weather-container">
+                    <iframe src="https://i.tianqi.com/?c=code&a=getcode&id=73&icon=1" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="container main-content">
-        <section class="quick-links">
+        <!-- 重新设计的Quick Links Section -->
+        <section class="quick-links-box">
             <h2 class="section-title"><i class="fas fa-link"></i> 快捷入口</h2>
             <div class="links-grid">
                 <div class="link-column">
@@ -171,7 +172,6 @@ var _hmt = _hmt || [];
                 </div>
                 <a href="http://www.hao123.com/old_lvyou" class="more-link" target="_blank">更多 <i class="fas fa-angle-right"></i></a>
             </div>
-
         </section>
     </div>
 
@@ -232,11 +232,10 @@ var _hmt = _hmt || [];
             <div class="copyright">© 2020-2025 医往无际 - 简单可依赖的个人上网导航，本站仅提供便捷的网页链接。</div>
         </div>
     </footer>
-</body>
-</html>
-<script>
+
+    <script>
         // 移动端菜单切换
-       document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             const nav = document.getElementById('mainNav');
             nav.classList.toggle('active');
             
@@ -274,4 +273,6 @@ var _hmt = _hmt || [];
         
         // 页面加载时执行
         window.addEventListener('load', checkScreenSize);
-</script>
+    </script>
+</body>
+</html>
