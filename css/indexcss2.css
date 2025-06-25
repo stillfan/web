@@ -1,4 +1,4 @@
-        :root {
+       :root {
             --primary-color: #3366ff;
             --primary-hover: #2d78f4;
             --secondary-color: #f8f8f8;
@@ -139,7 +139,7 @@
 
         .main-nav a:hover {
             color: #fff;
-            background-color: rgba(255,255,255,0.2)or);
+            background-color: rgba(255,255,255,0.2);
             text-decoration: none;
         }
 
@@ -147,12 +147,12 @@
         .search-container {
             position: relative;
             margin-right: 20px;
-            width: 320px; /* 固定搜索容器宽度 */
+            width: 320px;
         }
 
         .search-input {
-            width: 100%; /* 使用100%宽度填充容器 */
-            padding: 10px 50px 10px 40px; /* 右侧留出按钮空间 */
+            width: 100%;
+            padding: 10px 50px 10px 40px;
             border: 1px solid rgba(255,255,255,0.3);
             border-radius: 30px;
             font-size: 14px;
@@ -189,7 +189,7 @@
             cursor: pointer;
             font-size: 14px;
             transition: var(--transition);
-            white-space: nowrap; /* 防止文字换行 */
+            white-space: nowrap;
         }
 
         .search-btn:hover {
@@ -205,18 +205,18 @@
         .weather-container {
             display: flex;
             align-items: center;
-            height: 40px; /* 与导航栏高度匹配 */
-            margin-left: 20px; /* 与搜索框保持适当间距 */
+            height: 40px;
+            margin-left: 20px;
         }
 
         .weather-container iframe {
-            height: 24px !important; /* 适当调整高度 */
+            height: 24px !important;
             width: auto;
             border: none;
-            vertical-align: middle; /* 垂直居中 */
+            vertical-align: middle;
         }
 
-        /* Main Content Sections - Centered Layout */
+        /* Main Content Sections */
         .main-content {
             margin: 20px auto;
             flex: 1;
@@ -224,24 +224,59 @@
             max-width: 1200px;
         }
 
-        /* Quick Links Section */
-        .quick-links {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        /* 重新设计的Quick Links Section - 按照category-box风格 */
+        .quick-links-box {
+            background-color: #fff;
             border-radius: 12px;
             box-shadow: var(--card-shadow);
-            padding: 20px;
-            margin: 0 auto 20px;
-            max-width: 1200px;
-            border: 1px solid rgba(0,0,0,0.05);
+            padding: 18px;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        /* 深色半透明覆盖层 */
+        .quick-links-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+            z-index: 1;
+            border-radius: 12px;
+        }
+        
+        /* 内容放在覆盖层上方 */
+        .quick-links-box > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* 医疗相关背景 */
+        .quick-links-box {
+            background-image: url('https://images.unsplash.com/photo-1581595219318-a8a05fcb6d9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .quick-links-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
         }
 
         .section-title {
             font-size: 18px;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
             display: flex;
             align-items: center;
+            color: white;
         }
 
         .section-title i {
@@ -251,19 +286,24 @@
 
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(6, 2fr);
-            gap: 12px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
         }
 
         .link-column a {
-            display: block;
+            display: flex;
+            align-items: center;
+            background-color: rgba(255,255,255,0.2);
             padding: 8px 10px;
             margin-bottom: 6px;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: var(--transition);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
             font-size: 15px;
-            background-color: #eef7ff;    /*标签背景颜色 */
-            border: 1px solid #dbeafe;
         }
 
         .link-column a i {
@@ -271,14 +311,14 @@
             width: 18px;
             text-align: center;
             flex-shrink: 0;
-            color: var(--);   /*链接前图标颜色 */
+            color: var(--accent-color);
         }
 
         .link-column a:hover {
-            background-color: #dbeafe;
+            background-color: var(--primary-color);
             text-decoration: none;
-            transform: translateX(3px);
-            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         /* Category Section - Centered Grid */
@@ -370,7 +410,7 @@
 
         .category-links {
             display: grid;
-            grid-template-columns: repeat(3, 2fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 6px;
         }
 
@@ -573,7 +613,7 @@
             }
         }
 
-        .quick-links, .category-section, .tab-section {
+        .quick-links-box, .category-section, .tab-section {
             animation: fadeInUp 0.6s ease-out forwards;
         }
 
@@ -598,7 +638,7 @@
 
         @media (max-width: 992px) {
             .links-grid {
-                grid-template-columns: repeat(3, 2fr);
+                grid-template-columns: repeat(3, 1fr);
                 gap: 8px;
             }
             
@@ -607,7 +647,7 @@
             }
             
             .category-links {
-                grid-template-columns: repeat(2, 2fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
             }
             
@@ -674,11 +714,11 @@
             }
             
             .search-input {
-                padding: 12px 50px 12px 45px; /* 移动端增加内边距 */
+                padding: 12px 50px 12px 45px;
             }
             
             .search-btn {
-                padding: 8px 18px; /* 移动端增大按钮 */
+                padding: 8px 18px;
             }
             
             .weather-container {
@@ -711,7 +751,7 @@
                 font-size: 13px;
             }
 
-            .quick-links, .category-box {
+            .quick-links-box, .category-box {
                 padding: 15px;
             }
             
