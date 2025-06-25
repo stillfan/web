@@ -243,7 +243,7 @@
 
     .links-grid {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 2fr);
         gap: 12px;
     }
 
@@ -312,7 +312,7 @@
 
     .category-links {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 2fr);
         gap: 6px;
     }
 
@@ -539,7 +539,7 @@
         }
         
         .category-section {
-            grid-template-columns: repeat(2, 2fr);
+            grid-template-columns: repeat(2, 1fr);
         }
         
         .category-links {
@@ -615,12 +615,12 @@
         }
         
         .links-grid {
-            grid-template-columns: repeat(2, 2fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 6px;
         }
         
         .category-section {
-            grid-template-columns: 2fr;
+            grid-template-columns: 1fr;
             gap: 15px;
         }
         
