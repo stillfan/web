@@ -539,7 +539,7 @@
         }
         
         .category-section {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 2fr);
         }
         
         .category-links {
@@ -615,12 +615,12 @@
         }
         
         .links-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 2fr);
             gap: 6px;
         }
         
         .category-section {
-            grid-template-columns: 1fr;
+            grid-template-columns: 2fr;
             gap: 15px;
         }
         
