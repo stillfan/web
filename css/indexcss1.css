@@ -18,7 +18,7 @@
     }
 
     body {
-        font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+        font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
         background-color: #f9f9f9;
         color: var(--text-color);
         line-height: 1.6;
@@ -322,7 +322,7 @@
         align-items: center;
         background-color: #f0f7ff;
         padding: 8px 10px;
-        font-size: 14px;
+        font-size: 15px;
         border-radius: 6px;
         transition: var(--transition);
         white-space: nowrap;
@@ -439,7 +439,7 @@
         border-radius: 6px;
         font-size: 14px;
         transition: var(--transition);
-        color: var(--link-color);    /*链接颜色 */
+
     }
 
     .tab-pane a:hover {
@@ -450,7 +450,7 @@
 
     /* Footer */
     footer {
-        background: linear-gradient(to bottom, #ffffff, #666);
+        background: linear-gradient(to bottom, #fff, #ccc);
         padding: 20px 0;
         margin-top: 20px;
         border-top: 1px solid var(--border-color);
@@ -466,7 +466,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .footer-links a {
@@ -483,7 +483,7 @@
     }
 
     .footer-links a:hover {
-        color: var(--primary-color);
+        color: var(--accent-color);
         text-decoration: none;
     }
 
@@ -660,11 +660,11 @@
 
     @media (max-width: 400px) {
         .links-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 2fr;
         }
         
         .category-links {
-            grid-template-columns: 1fr;
+            grid-template-columns: 2fr;
         }
         
         .tab-btn {
