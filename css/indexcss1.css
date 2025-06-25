@@ -254,7 +254,6 @@
         border-radius: 4px;
         transition: var(--transition);
         font-size: 15px;
-        color:var(--link-color);    /*链接颜色 */
         background-color: var(--secondary-color);    /*标签背景颜色 */
     }
 
