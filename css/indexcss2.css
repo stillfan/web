@@ -1,5 +1,5 @@
         :root {
-            --primary-color: #1a2980;
+            --primary-color: #3366ff;
             --primary-hover: #2d78f4;
             --secondary-color: #f8f8f8;
             --accent-color: #ffd700;
@@ -242,13 +242,12 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             display: flex;
             align-items: center;
-            color: #1a2980;
         }
 
         .section-title i {
             margin-right: 10px;
-            color: var(--primary-color);
-        }
+            color: var(--accent-color);
+        } 
 
         .links-grid {
             display: grid;
@@ -264,7 +263,6 @@
             transition: var(--transition);
             font-size: 15px;
             background-color: #eef7ff;    /*标签背景颜色 */
-            color: #1a2980;
             border: 1px solid #dbeafe;
         }
 
