@@ -201,12 +201,12 @@
             transform: translateY(-50%) scale(0.95);
         }
 
-        /* 天气容器样式 */
         .weather-container {
             display: flex;
             align-items: center;
             height: 40px;
             margin-left: 20px;
+            width: 240px; /* 固定容器宽度 */
         }
 
         .weather-container iframe {
@@ -215,7 +215,20 @@
             border: none;
             vertical-align: middle;
         }
-
+        /* 主题切换按钮样式  */
+        .theme-toggle-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 20px;
+            padding: 6px 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
         /* Main Content Sections */
         .main-content {
             margin: 20px auto;
@@ -224,8 +237,8 @@
             max-width: 1200px;
         }
 
-        /* 重新设计的Quick Links Section - 按照category-box风格 */
-        .quick-links-box {
+        /* Quick Links Section - 按照category-box风格 */
+        .quick-links {
             background-color: #fff;
             border-radius: 12px;
             box-shadow: var(--card-shadow);
@@ -241,7 +254,7 @@
         }
         
         /* 深色半透明覆盖层 */
-        .quick-links-box::before {
+        .quick-links::before {
             content: '';
             position: absolute;
             top: 0;
@@ -254,17 +267,17 @@
         }
         
         /* 内容放在覆盖层上方 */
-        .quick-links-box > * {
+        .quick-links > * {
             position: relative;
             z-index: 2;
         }
         
         /* 医疗相关背景 */
-        .quick-links-box {
-            background-image: url('https://images.unsplash.com/photo-1581595219318-a8a05fcb6d9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
+        .quick-links {
+            background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
         }
 
-        .quick-links-box:hover {
+        .quick-links:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
         }
@@ -613,7 +626,7 @@
             }
         }
 
-        .quick-links-box, .category-section, .tab-section {
+        .quick-links, .category-section, .tab-section {
             animation: fadeInUp 0.6s ease-out forwards;
         }
 
@@ -751,7 +764,7 @@
                 font-size: 13px;
             }
 
-            .quick-links-box, .category-box {
+            .quick-links, .category-box {
                 padding: 15px;
             }
             
