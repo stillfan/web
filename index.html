@@ -6,16 +6,16 @@
     <title>上网导航 - 医往无际，Just for you!</title>
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/indexcss1.css">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?fe76b2da3891598feba4f0c0bb582e77";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+    <link id="theme-style" rel="stylesheet" href="css/indexcss1.css">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?fe76b2da3891598feba4f0c0bb582e77";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
 </head>
 <body>
     <header>
@@ -42,10 +42,12 @@ var _hmt = _hmt || [];
     <div class="weather-container">
         <iframe src="https://i.tianqi.com/?c=code&a=getcode&id=73&icon=1" frameborder="0" scrolling="no"></iframe>
     </div>
+<button id="theme-toggle" class="theme-toggle-btn">
+    <i class="fas fa-moon"></i>
+</button>
 </div>
         </div>
     </header>
-
     <div class="container main-content">
         <section class="quick-links">
             <h2 class="section-title"><i class="fas fa-link"></i> 快捷入口</h2>
@@ -73,7 +75,7 @@ var _hmt = _hmt || [];
                 <div class="link-column">
                     <a href="https://docs.qq.com/desktop/" target="_blank"><i class="fas fa-file-word"></i> 腾讯文档</a>
                     <a href="https://mp.weixin.qq.com/" target="_blank"><i class="fab fa-weixin"></i> 微信公众平台</a>
-                    <a href="https://tools.pdf24.org/zh/all-tools" target="_blank"><i class="fas fa-file-pdf"></i> PDF工具</a>
+                    <a href="https://tools.pdf24.org/zh/all-tools" target="_blank"><i class="fas fa-file-pdf"></i>PDF工具</a>
                 </div>
                 <div class="link-column">
                     <a href="bms.html" target="_blank"><i class="fas fa-tools"></i> 便民查询工具</a>
@@ -85,7 +87,7 @@ var _hmt = _hmt || [];
 
         <!-- 修改后的分类导航 - 3列布局 -->
         <section class="category-section">
-            <div class="category-box">
+            <div class="category-box academic-box">
                 <h3 class="category-title"><i class="fas fa-graduation-cap"></i> 学术</h3>
                 <div class="category-links">
                     <a href="https://scholar.google.com/" target="_blank">Google学术</a>
@@ -101,7 +103,7 @@ var _hmt = _hmt || [];
                 <a href="https://www.sciencesoft.cn/so/" class="more-link" target="_blank">更多 <i class="fas fa-angle-right"></i></a>
             </div>
 
-            <div class="category-box">
+            <div class="category-box movie-box">
                 <h3 class="category-title"><i class="fas fa-film"></i> 影音</h3>
                 <div class="category-links">
                     <a href="http://www.youku.com/" target="_blank">优酷网</a>
@@ -117,7 +119,7 @@ var _hmt = _hmt || [];
                 <a href="http://v.hao123.baidu.com/dianying/" class="more-link" target="_blank">更多 <i class="fas fa-angle-right"></i></a>
             </div>
 
-            <div class="category-box">
+            <div class="category-box software-box">
                 <h3 class="category-title"><i class="fas fa-laptop-code"></i> 软件</h3>
                 <div class="category-links">
                     <a href="https://msdn.itellyou.cn/" target="_blank">操作系统</a>
@@ -133,7 +135,7 @@ var _hmt = _hmt || [];
                 <a href="#" class="more-link" target="_blank">更多 <i class="fas fa-angle-right"></i></a>
             </div>
 
-            <div class="category-box">
+            <div class="category-box email-box">
                 <h3 class="category-title"><i class="fas fa-envelope"></i> 邮箱</h3>
                 <div class="category-links">
                     <a href="http://email.163.com/" target="_blank">网易邮箱</a>
@@ -146,7 +148,7 @@ var _hmt = _hmt || [];
                 <a href="http://www.hao123.com/mail" class="more-link" target="_blank">更多 <i class="fas fa-angle-right"></i></a>
             </div>
 
-            <div class="category-box">
+            <div class="category-box cloud-box">
                 <h3 class="category-title"><i class="fas fa-cloud-upload-alt"></i> 网盘</h3>
                 <div class="category-links">
                     <a href="http://pan.baidu.com" target="_blank">百度云盘</a>
@@ -159,7 +161,7 @@ var _hmt = _hmt || [];
                 <a href="http://www.hao123.com/mail" class="more-link" target="_blank">更多 <i class="fas fa-angle-right"></i></a>
             </div>
 
-            <div class="category-box">
+            <div class="category-box travel-box">
                 <h3 class="category-title"><i class="fas fa-plane"></i> 旅游</h3>
                 <div class="category-links">
                     <a href="http://www.dili360.com/" target="_blank">国家地理</a>
@@ -232,8 +234,6 @@ var _hmt = _hmt || [];
             <div class="copyright">© 2020-2025 医往无际 - 简单可依赖的个人上网导航，本站仅提供便捷的网页链接。</div>
         </div>
     </footer>
-</body>
-</html>
 <script>
         // 移动端菜单切换
        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
@@ -274,4 +274,43 @@ var _hmt = _hmt || [];
         
         // 页面加载时执行
         window.addEventListener('load', checkScreenSize);
+// 主题切换功能
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    const themeStyle = document.getElementById('theme-style');
+    const body = document.body;
+    const themeIcon = this.querySelector('i');
+    
+    if (themeStyle.getAttribute('href') === 'css/indexcss1.css') {
+        themeStyle.setAttribute('href', 'css/indexcss2.css');
+        body.classList.add('dark-theme');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeStyle.setAttribute('href', 'css/indexcss1.css');
+        body.classList.remove('dark-theme');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+    
+    // 保存用户偏好到本地存储
+    localStorage.setItem('themePreference', themeStyle.getAttribute('href'));
+});
+
+// 检查本地存储中的主题偏好
+window.addEventListener('load', function() {
+    const savedTheme = localStorage.getItem('themePreference');
+    if (savedTheme) {
+        const themeStyle = document.getElementById('theme-style');
+        themeStyle.setAttribute('href', savedTheme);
+        
+        if (savedTheme === 'css/indexcss2.css') {
+            document.body.classList.add('dark-theme');
+            const themeIcon = document.querySelector('#theme-toggle i');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+    }
+});
 </script>
+</body>
+</html>
