@@ -191,12 +191,12 @@ header {
     transform: translateY(-50%) scale(0.95);
 }
 
-/* 天气容器样式 */
 .weather-container {
     display: flex;
     align-items: center;
     height: 40px; /* 与导航栏高度匹配 */
     margin-left: 20px; /* 与搜索框保持适当间距 */
+    width: 240px; /* 固定容器宽度 */
 }
 
 .weather-container iframe {
@@ -204,6 +204,21 @@ header {
     width: auto;
     border: none;
     vertical-align: middle; /* 垂直居中 */
+}
+/* 主题切换按钮样式  */
+ .theme-toggle-btn {
+    background: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.theme-toggle-btn:hover {
+    background: #999;
 }
 
 /* Main Content Sections - Centered Layout */
@@ -585,7 +600,7 @@ footer {
         margin-bottom: 15px;
     }
     
-    /* 修复1: 移动端导航垂直对齐问题 */
+    /* 移动端导航垂直对齐问题 */
     .main-nav a {
         display: flex;
         align-items: center;
@@ -614,7 +629,7 @@ footer {
         text-align: center;
     }
     
-    /* 修复2: 保持2列布局 */
+    /* 保持2列布局 */
     .links-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
@@ -649,7 +664,7 @@ footer {
 }
 
 @media (max-width: 576px) {
-    /* 修复2: 超小屏幕保持2列布局 */
+    /* 超小屏幕保持2列布局 */
     .links-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 6px;
@@ -667,7 +682,7 @@ footer {
 }
 
 @media (max-width: 400px) {
-    /* 修复2: 最小屏幕保持2列布局 */
+    /* 最小屏幕保持2列布局 */
     .links-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
