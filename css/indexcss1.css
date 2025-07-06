@@ -309,9 +309,9 @@ header {
 }
 
 .category-title {
-    font-size: 17px;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
