@@ -534,7 +534,7 @@
         }
 
         .tab-content {
-            padding: 20px;
+            padding: 18px;
         }
 
         .tab-pane {
@@ -549,12 +549,12 @@
         .tab-pane a {
             display: inline-flex;
             align-items: center;
-            margin: 6px 8px 6px 0;
-            padding: 8px 12px;
+            margin: 4px 6px 4px 0;
+            padding: 6px 10px;
             background-color: #eef7ff;
-            border-radius: 6px;
+            border-radius: 2px;
             transition: var(--transition);
-            font-size: 15px;
+            font-size: 14px;
             border: 1px solid #dbeafe;
         }
 
