@@ -332,7 +332,7 @@ header {
     display: flex;
     align-items: center;
     background-color: #f0f7ff;
-    padding: 10px 12px;
+    padding: 8px 10px;
     font-size: 15px;
     border-radius: 6px;
     transition: var(--transition);
