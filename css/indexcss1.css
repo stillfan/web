@@ -332,7 +332,7 @@ header {
     display: flex;
     align-items: center;
     background-color: #f0f7ff;
-    padding: 8px 10px;
+    padding: 10px 12px;
     font-size: 15px;
     border-radius: 6px;
     transition: var(--transition);
@@ -346,6 +346,7 @@ header {
     color: #fff;
     background-color: var(--primary-color);
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
 }
 
 .more-link {
@@ -456,6 +457,7 @@ header {
     background-color: #e0e0f0;
     text-decoration: none;
     color: var(--primary-color);    /*标签背景颜色 */
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
 }
 
 /* Footer */
