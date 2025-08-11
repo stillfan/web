@@ -304,7 +304,7 @@ header {
 }
 
 .category-box:hover {
-    transform: translateY(-4px) scale(1.00);
+    transform: translateY(-4px) scale(1.02);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
@@ -712,4 +712,5 @@ footer {
         margin: 5px 0;
     }
 }
+
 
