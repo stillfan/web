@@ -73,17 +73,17 @@
             const day = now.getDate();
             
             if (month === 1) return day < 20 ? '小寒' : '大寒';
-            if (month === 2) return day < 4 ? '大寒' : (day <= 19 ? '立春' : '雨水');
-            if (month === 3) return day < 6 ? '雨水' : (day <= 21 ? '惊蛰' : '春分');
-            if (month === 4) return day < 5 ? '春分' : (day <= 20 ? '清明' : '谷雨');
-            if (month === 5) return day < 6 ? '谷雨' : (day <= 21 ? '立夏' : '小满');
-            if (month === 6) return day < 6 ? '小满' : (day <= 22 ? '芒种' : '夏至');
-            if (month === 7) return day < 7 ? '夏至' : (day <= 23 ? '小暑' : '大暑');
-            if (month === 8) return day < 8 ? '大暑' : (day <= 23 ? '立秋' : '处暑');
-            if (month === 9) return day < 8 ? '处暑' : (day <= 23 ? '白露' : '秋分');
-            if (month === 10) return day < 9 ? '秋分' : (day <= 24 ? '寒露' : '霜降');
-            if (month === 11) return day < 8 ? '霜降' : (day <= 23 ? '立冬' : '小雪');
-            if (month === 12) return day < 7 ? '小雪' : (day <= 22 ? '大雪' : '冬至');
+            if (month === 2) return day < 4 ? '大寒' : (day < 18 ? '立春' : '雨水');
+            if (month === 3) return day < 6 ? '雨水' : (day < 20 ? '惊蛰' : '春分');
+            if (month === 4) return day < 5 ? '春分' : (day < 19 ? '清明' : '谷雨');
+            if (month === 5) return day < 6 ? '谷雨' : (day < 20 ? '立夏' : '小满');
+            if (month === 6) return day < 6 ? '小满' : (day < 21 ? '芒种' : '夏至');
+            if (month === 7) return day < 7 ? '夏至' : (day < 22 ? '小暑' : '大暑');
+            if (month === 8) return day < 8 ? '大暑' : (day < 22 ? '立秋' : '处暑');
+            if (month === 9) return day < 8 ? '处暑' : (day < 22 ? '白露' : '秋分');
+            if (month === 10) return day < 9 ? '秋分' : (day < 23 ? '寒露' : '霜降');
+            if (month === 11) return day < 8 ? '霜降' : (day < 22 ? '立冬' : '小雪');
+            if (month === 12) return day < 7 ? '小雪' : (day < 21 ? '大雪' : '冬至');
             
             return '立春';
         },
