@@ -6,149 +6,155 @@
 (function() {
     'use strict';
 
-    // ========================================
-    // 节气配置数据
-    // ========================================
-    const SolarTermData = {
-        // 本地节气背景图片路径
-        backgrounds: {
-            '立春': 'searchbg/lichun.jpg',
-            '雨水': 'searchbg/yushui.jpg',
-            '惊蛰': 'searchbg/jingzhe.jpg',
-            '春分': 'searchbg/chunfen.jpg',
-            '清明': 'searchbg/qingming.jpg',
-            '谷雨': 'searchbg/guyu.jpg',
-            '立夏': 'searchbg/lixia.jpg',
-            '小满': 'searchbg/xiaoman.jpg',
-            '芒种': 'searchbg/mangzhong.jpg',
-            '夏至': 'searchbg/xiazhi.jpg',
-            '小暑': 'searchbg/xiaoshu.jpg',
-            '大暑': 'searchbg/dashu.jpg',
-            '立秋': 'searchbg/liqiu.jpg',
-            '处暑': 'searchbg/chushu.jpg',
-            '白露': 'searchbg/bailu.jpg',
-            '秋分': 'searchbg/qiufen.jpg',
-            '寒露': 'searchbg/hanlu.jpg',
-            '霜降': 'searchbg/shuangjiang.jpg',
-            '立冬': 'searchbg/lidong.jpg',
-            '小雪': 'searchbg/xiaoxue.jpg',
-            '大雪': 'searchbg/daxue.jpg',
-            '冬至': 'searchbg/dongzhi.jpg',
-            '小寒': 'searchbg/xiaohan.jpg',
-            '大寒': 'searchbg/dahan.jpg'
-        },
-        
-        // 节气描述（分两行）
-        descriptions: {
-            '立春': ['万物起始', '一切更生'],
-            '雨水': ['降雨开始', '万物萌动'],
-            '惊蛰': ['春雷始鸣', '惊醒蛰虫'],
-            '春分': ['昼夜平分', '春暖花开'],
-            '清明': ['气清景明', '万物皆显'],
-            '谷雨': ['雨生百谷', '滋润万物'],
-            '立夏': ['夏季开始', '万物繁茂'],
-            '小满': ['小得盈满', '麦类渐熟'],
-            '芒种': ['有芒之种', '可稼可穑'],
-            '夏至': ['日长之至', '日影短至'],
-            '小暑': ['暑气渐盛', '但未至极'],
-            '大暑': ['炎热至极', '一年最热'],
-            '立秋': ['秋季开始', '暑去凉来'],
-            '处暑': ['暑气渐止', '秋意渐浓'],
-            '白露': ['天气转凉', '露凝而白'],
-            '秋分': ['昼夜平分', '秋高气爽'],
-            '寒露': ['露水已寒', '将欲凝结'],
-            '霜降': ['天气渐冷', '开始有霜'],
-            '立冬': ['冬季开始', '万物收藏'],
-            '小雪': ['开始降雪', '雪量不大'],
-            '大雪': ['降雪增多', '地面积雪'],
-            '冬至': ['日短之至', '日影长至'],
-            '小寒': ['天气寒冷', '但未至极'],
-            '大寒': ['寒冷至极', '一年最冷']
-        },
+// ========================================
+// 节气配置数据
+// ========================================
+const SolarTermData = {
+    // 本地节气背景图片路径
+    backgrounds: {
+        '立春': 'searchbg/lichun.jpg',
+        '雨水': 'searchbg/yushui.jpg',
+        '惊蛰': 'searchbg/jingzhe.jpg',
+        '春分': 'searchbg/chunfen.jpg',
+        '清明': 'searchbg/qingming.jpg',
+        '谷雨': 'searchbg/guyu.jpg',
+        '立夏': 'searchbg/lixia.jpg',
+        '小满': 'searchbg/xiaoman.jpg',
+        '芒种': 'searchbg/mangzhong.jpg',
+        '夏至': 'searchbg/xiazhi.jpg',
+        '小暑': 'searchbg/xiaoshu.jpg',
+        '大暑': 'searchbg/dashu.jpg',
+        '立秋': 'searchbg/liqiu.jpg',
+        '处暑': 'searchbg/chushu.jpg',
+        '白露': 'searchbg/bailu.jpg',
+        '秋分': 'searchbg/qiufen.jpg',
+        '寒露': 'searchbg/hanlu.jpg',
+        '霜降': 'searchbg/shuangjiang.jpg',
+        '立冬': 'searchbg/lidong.jpg',
+        '小雪': 'searchbg/xiaoxue.jpg',
+        '大雪': 'searchbg/daxue.jpg',
+        '冬至': 'searchbg/dongzhi.jpg',
+        '小寒': 'searchbg/xiaohan.jpg',
+        '大寒': 'searchbg/dahan.jpg'
+    },
 
-        // 获取当前节气
-        getCurrentTerm: function() {
-            const now = new Date();
-            const month = now.getMonth() + 1;
-            const day = now.getDate();
-            
-            if (month === 1) return day < 20 ? '小寒' : '大寒';
-            if (month === 2) return day < 4 ? '大寒' : (day < 19 ? '立春' : '雨水');
-            if (month === 3) return day < 6 ? '雨水' : (day < 21 ? '惊蛰' : '春分');
-            if (month === 4) return day < 5 ? '春分' : (day < 20 ? '清明' : '谷雨');
-            if (month === 5) return day < 6 ? '谷雨' : (day < 21 ? '立夏' : '小满');
-            if (month === 6) return day < 6 ? '小满' : (day < 20 ? '芒种' : '夏至');
-            if (month === 7) return day < 7 ? '夏至' : (day < 21 ? '小暑' : '大暑');
-            if (month === 8) return day < 8 ? '大暑' : (day < 21 ? '立秋' : '处暑');
-            if (month === 9) return day < 8 ? '处暑' : (day < 21 ? '白露' : '秋分');
-            if (month === 10) return day < 9 ? '秋分' : (day < 22 ? '寒露' : '霜降');
-            if (month === 11) return day < 8 ? '霜降' : (day < 21 ? '立冬' : '小雪');
-            if (month === 12) return day < 7 ? '小雪' : (day < 20 ? '大雪' : '冬至');
-            
-            return '立春';
-        },
+    // 节气描述（分两行）
+    descriptions: {
+        '立春': ['万物起始', '一切更生'],
+        '雨水': ['降雨开始', '万物萌动'],
+        '惊蛰': ['春雷始鸣', '惊醒蛰虫'],
+        '春分': ['昼夜平分', '春暖花开'],
+        '清明': ['气清景明', '万物皆显'],
+        '谷雨': ['雨生百谷', '滋润万物'],
+        '立夏': ['夏季开始', '万物繁茂'],
+        '小满': ['小得盈满', '麦类渐熟'],
+        '芒种': ['有芒之种', '可稼可穑'],
+        '夏至': ['日长之至', '日影短至'],
+        '小暑': ['暑气渐盛', '但未至极'],
+        '大暑': ['炎热至极', '一年最热'],
+        '立秋': ['秋季开始', '暑去凉来'],
+        '处暑': ['暑气渐止', '秋意渐浓'],
+        '白露': ['天气转凉', '露凝而白'],
+        '秋分': ['昼夜平分', '秋高气爽'],
+        '寒露': ['露水已寒', '将欲凝结'],
+        '霜降': ['天气渐冷', '开始有霜'],
+        '立冬': ['冬季开始', '万物收藏'],
+        '小雪': ['开始降雪', '雪量不大'],
+        '大雪': ['降雪增多', '地面积雪'],
+        '冬至': ['日短之至', '日影长至'],
+        '小寒': ['天气寒冷', '但未至极'],
+        '大寒': ['寒冷至极', '一年最冷']
+    },
 
-        // 获取节气信息
-        getCurrentInfo: function() {
-            const term = this.getCurrentTerm();
-            const desc = this.descriptions[term] || ['节气描述', ''];
-            return {
-                name: term,
-                desc: desc,
-                image: this.backgrounds[term] || this.backgrounds['立春']
-            };
-        }
-    };
+    // 修正优化后的节气判断
+    getCurrentTerm: function () {
+        const now = new Date();
+        const m = now.getMonth() + 1;
+        const d = now.getDate();
 
-    // ========================================
-    // 节气显示功能
-    // ========================================
-    function initSolarTerm() {
-        const termNameEl = document.getElementById('solarTermName');
-        const termDescEl = document.getElementById('solarTermDesc');
-        const searchSection = document.getElementById('searchSection');
-        
-        if (!termNameEl || !termDescEl) return;
+        // 参考天文台常年节气均值，修正所有临界边界
+        if (m === 1) return d < 20 ? '小寒' : '大寒';
+        if (m === 2) return d < 4 ? '大寒' : (d < 19 ? '立春' : '雨水');
+        if (m === 3) return d < 6 ? '雨水' : (d < 21 ? '惊蛰' : '春分');
+        if (m === 4) return d < 5 ? '春分' : (d < 20 ? '清明' : '谷雨');
+        if (m === 5) return d < 6 ? '谷雨' : (d < 21 ? '立夏' : '小满');
+        if (m === 6) return d < 6 ? '小满' : (d < 21 ? '芒种' : '夏至');
+        if (m === 7) return d < 7 ? '夏至' : (d < 22 ? '小暑' : '大暑');
+        if (m === 8) return d < 8 ? '大暑' : (d < 23 ? '立秋' : '处暑');
+        if (m === 9) return d < 8 ? '处暑' : (d < 23 ? '白露' : '秋分');
+        if (m === 10) return d < 8 ? '秋分' : (d < 24 ? '寒露' : '霜降');
+        if (m === 11) return d < 7 ? '霜降' : (d < 22 ? '立冬' : '小雪');
+        if (m === 12) return d < 7 ? '小雪' : (d < 22 ? '大雪' : '冬至');
 
-        const info = SolarTermData.getCurrentInfo();
-        
-        // 显示节气名称
-        termNameEl.textContent = info.name;
-        
-        // 显示节气描述（两行）
-        termDescEl.innerHTML = `${info.desc[0]}<br>${info.desc[1]}`;
-        
-        // 设置背景图片
-        if (searchSection) {
-            const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-            const imageUrl = basePath + info.image;
-            
-            const styleId = 'solar-bg-style';
-            let styleEl = document.getElementById(styleId);
-            if (!styleEl) {
-                styleEl = document.createElement('style');
-                styleEl.id = styleId;
-                document.head.appendChild(styleEl);
-            }
-            
-            styleEl.innerHTML = `
-                #searchSection::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-image: url('${imageUrl}');
-                    background-size: cover;
-                    background-position: center;
-                    opacity: 0.8;
-                    z-index: 0;
-                    transition: opacity 0.8s ease;
-                }
-            `;
-        }
+        return '立春';
+    },
+
+    // 获取节气信息（原有接口完全不变）
+    getCurrentInfo: function () {
+        const term = this.getCurrentTerm();
+        const desc = this.descriptions[term] || ['节气描述', ''];
+        return {
+            name: term,
+            desc: desc,
+            image: this.backgrounds[term] || this.backgrounds['立春']
+        };
     }
+};
+
+// ========================================
+// 节气显示功能（完全保留原有逻辑，无需改动HTML）
+// ========================================
+function initSolarTerm() {
+    const termNameEl = document.getElementById('solarTermName');
+    const termDescEl = document.getElementById('solarTermDesc');
+    const searchSection = document.getElementById('searchSection');
+
+    if (!termNameEl || !termDescEl) return;
+
+    const info = SolarTermData.getCurrentInfo();
+
+    // 显示节气名称
+    termNameEl.textContent = info.name;
+
+    // 显示节气描述（两行）
+    termDescEl.innerHTML = `${info.desc[0]}<br>${info.desc[1]}`;
+
+    // 设置背景图片
+    if (searchSection) {
+        const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        const imageUrl = basePath + info.image;
+
+        const styleId = 'solar-bg-style';
+        let styleEl = document.getElementById(styleId);
+        if (!styleEl) {
+            styleEl = document.createElement('style');
+            styleEl.id = styleId;
+            document.head.appendChild(styleEl);
+        }
+
+        styleEl.innerHTML = `
+            #searchSection::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url('${imageUrl}');
+                background-size: cover;
+                background-position: center;
+                opacity: 0.8;
+                z-index: 0;
+                transition: opacity 0.8s ease;
+            }
+        `;
+    }
+}
+
+// 页面加载执行
+window.addEventListener('load', initSolarTerm);
+// 定时刷新，跨天时自动更新
+setInterval(initSolarTerm, 30 * 60 * 1000);
 
     // ========================================
     // 日期显示功能
